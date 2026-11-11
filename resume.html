@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Arshd Rashid Wani · Résumé</title>
+<meta name="robots" content="noindex">
+<style>
+  @font-face { font-family: "Instrument Serif"; src: url("fonts/InstrumentSerif-Regular.woff") format("woff"); }
+  @font-face { font-family: "Inter"; src: url("fonts/Inter.woff") format("woff"); font-weight: 100 900; }
+  @font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono.woff") format("woff"); font-weight: 100 800; }
+  @page { size: Letter; margin: 0.5in 0.55in; }
+  :root { --ink: #16171b; --ink-2: #3a3b42; --muted: #6c6b66; --rule: #d9d3c5; --pass: #1b7a46; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; color: var(--ink); font: 400 9.5pt/1.45 "Inter", system-ui, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-bottom: 9px; border-bottom: 1.5px solid var(--ink); }
+  h1 { margin: 0; font: 400 29pt/0.95 "Instrument Serif", Georgia, serif; letter-spacing: -.01em; }
+  .role { margin: 5px 0 0; font: 500 8pt/1 "JetBrains Mono", monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--pass); }
+  .contact { text-align: right; font: 400 8pt/1.55 "JetBrains Mono", monospace; color: var(--ink-2); }
+  h2 { margin: 15px 0 7px; font: 600 7.8pt/1 "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--pass); display: flex; align-items: center; gap: 8px; }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  .summary { margin: 10px 0 0; color: var(--ink-2); }
+  .job { display: grid; grid-template-columns: 1.05in 1fr; gap: 10px; margin-bottom: 6px; }
+  .when { font: 400 7.8pt/1.5 "JetBrains Mono", monospace; color: var(--muted); padding-top: 1px; }
+  .job h3, .proj h3 { margin: 0; font: 600 9.4pt/1.35 "Inter", sans-serif; }
+  .job h3 span, .proj h3 span { font-weight: 400; color: var(--muted); }
+  ul { margin: 2px 0 0; padding-left: 13px; }
+  li { margin: 1px 0; color: var(--ink-2); }
+  li::marker { color: var(--pass); }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+  .proj p { margin: 1px 0 0; color: var(--ink-2); }
+  .proj .url { font: 400 7.4pt/1.4 "JetBrains Mono", monospace; color: var(--pass); }
+  .more { margin: 6px 0 0; color: var(--ink-2); }
+  .more b { font-weight: 600; color: var(--ink); }
+  .two { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+  dl { margin: 0; display: grid; grid-template-columns: 1.05in 1fr; gap: 3px 10px; }
+  dt { font: 400 7.8pt/1.5 "JetBrains Mono", monospace; color: var(--muted); }
+  dd { margin: 0; color: var(--ink-2); }
+  .edu p { margin: 0 0 4px; }
+  .edu b { font-weight: 600; }
+  .edu span { color: var(--muted); }
+  @media screen { body { max-width: 8.5in; margin: 24px auto; padding: 0.5in 0.55in; background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,.12); } html { background: #ece7db; } }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 id="name"></h1>
+      <p class="role" id="role"></p>
+    </div>
+    <div class="contact" id="contact"></div>
+  </header>
+  <p class="summary" id="summary"></p>
+
+  <h2>Experience</h2>
+  <div id="exp"></div>
+
+  <h2>Selected projects</h2>
+  <div class="projects" id="projects"></div>
+  <p class="more" id="more"></p>
+
+  <div class="two">
+    <div>
+      <h2>Skills</h2>
+      <dl id="skills"></dl>
+    </div>
+    <div class="edu">
+      <h2>Education</h2>
+      <div id="edu"></div>
+      <h2>Languages</h2>
+      <p id="langs" style="margin:0;color:var(--ink-2)"></p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const S = window.SITE, $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const bare = (u) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+    const email = S.email.join("@");
+    $("name").textContent = S.name;
+    $("role").textContent = "Software engineer · Backend & AI evaluation";
+    $("contact").innerHTML = [
+      `<a href="mailto:${email}">${email}</a>`,
+      `<a href="${S.links.site}">${bare(S.links.site)}</a>`,
+      `<a href="${S.links.github}">${bare(S.links.github)}</a>`,
+      `<a href="${S.links.linkedin}">${bare(S.links.linkedin)}</a>`,
+    ].join("<br>");
+    $("summary").textContent = S.summary;
+    $("exp").innerHTML = S.experience.map((j) => `
+      <div class="job"><div class="when">${esc(j.when)}</div><div>
+        <h3>${esc(j.org)} <span>· ${esc(j.title)}</span></h3>
+        <ul>${j.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+      </div></div>`).join("");
+    $("projects").innerHTML = S.featured.map((p) => {
+      const link = p.links.find((l) => l.label === "Live") || p.links[0];
+      return `<div class="proj"><h3>${esc(p.title)} <span>· ${esc(p.kind)}</span></h3>
+        <p>${esc(p.result)}</p>
+        ${link ? `<a class="url" href="${link.href}">${esc(bare(link.href))}</a>` : `<span class="url">${esc(p.note)}</span>`}</div>`;
+    }).join("");
+    $("more").innerHTML = `<b>Also shipped:</b> ` + S.more.map((m) => esc(m.title)).join(" · ") + `. All linked at ${esc(bare(S.links.site))}.`;
+    $("skills").innerHTML = S.skills.map((g) => `<dt>${esc(g.group)}</dt><dd>${g.items.map(esc).join(", ")}</dd>`).join("");
+    $("edu").innerHTML = S.education.map((e) => `<p><b>${esc(e.title)}</b><br><span>${esc(e.org)}${e.when ? " · " + esc(e.when) : ""}</span></p>`).join("");
+    $("langs").textContent = S.languages.join(", ");
+  </script>
+</body>
+</html>

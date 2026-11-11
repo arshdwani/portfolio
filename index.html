@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arshd Rashid Wani · Software engineer</title>
+  <meta name="description" content="Software engineer who builds software and the tests that prove it works. Backend, AI evaluation, and projects that show their results.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arshd Rashid Wani · Software engineer">
+  <meta property="og:description" content="I build software, and the tests that prove it works. Every project here shows its result.">
+  <meta property="og:url" content="https://arshdwani.github.io/portfolio/">
+  <meta property="og:image" content="https://arshdwani.github.io/portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/InstrumentSerif-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Inter.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Theme before paint: ?theme= (for screenshots) > saved choice > system setting.
+    (function () {
+      var q = new URLSearchParams(location.search).get("theme"), t = null;
+      try { t = q || localStorage.getItem("theme"); } catch (e) { t = q; }
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="mark" href="#top" aria-label="Arshd Rashid Wani, back to top">
+        <span class="mono-badge" aria-hidden="true">aw</span>
+        <span class="mark-name">Arshd Rashid Wani</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="theme" type="button" aria-label="Switch to dark theme" title="Switch theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <a class="btn btn-small" data-resume href="Arshd-Rashid-Wani-Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to full-time software roles</p>
+        <h1 id="hero-title">I build software, and the tests that <em>prove</em> it works.</h1>
+        <p class="lede">
+          I'm Arshd Rashid Wani, a software engineer. At Handshake AI, I write the hard terminal tasks that frontier
+          coding agents are graded on. Before that, I built cloud and database backend services at Oracle.
+          Every project below shows its result, with the numbers.
+        </p>
+        <div class="cta">
+          <a class="btn" data-mail href="#contact">Email me</a>
+          <a class="btn btn-ghost" data-resume href="Arshd-Rashid-Wani-Resume.pdf" target="_blank" rel="noopener">Download résumé <span class="muted">PDF</span></a>
+        </div>
+        <ul class="facts" aria-label="At a glance">
+          <li><b data-count="projects">16</b> projects</li>
+          <li><b data-count="checks">14</b> checked live on load</li>
+          <li><b>3</b> languages spoken</li>
+        </ul>
+      </div>
+
+      <figure class="runner" aria-labelledby="runner-cap">
+        <div class="runner-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="runner-title">live check</span>
+          <button class="rerun" id="rerun" type="button">Re-run</button>
+        </div>
+        <pre class="runner-body" id="runner" aria-live="polite"><span class="prompt">$</span> check --live arshdwani
+<span class="dim">pinging every project on this page…</span></pre>
+        <figcaption id="runner-cap" class="runner-cap">These checks run in your browser each time the page loads. Press <kbd>R</kbd> to run them again.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <header class="sec-head">
+        <p class="sec-num">01</p>
+        <h2 id="work-title">Selected work</h2>
+        <p class="sec-note">Each one says what I built and what happened when I tested it.</p>
+      </header>
+      <div class="cards" id="cards"></div>
+
+      <h3 class="sub-head">More things I've shipped</h3>
+      <ol class="more" id="more"></ol>
+    </section>
+
+    <section class="section wrap" id="experience" aria-labelledby="exp-title">
+      <header class="sec-head">
+        <p class="sec-num">02</p>
+        <h2 id="exp-title">Experience</h2>
+      </header>
+      <div class="exp" id="exp"></div>
+      <div class="edu-skills">
+        <div>
+          <h3 class="sub-head">Education</h3>
+          <ul class="edu" id="edu"></ul>
+        </div>
+        <div>
+          <h3 class="sub-head">Skills</h3>
+          <dl class="skills" id="skills"></dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap about" id="about" aria-labelledby="about-title">
+      <header class="sec-head">
+        <p class="sec-num">03</p>
+        <h2 id="about-title">About</h2>
+      </header>
+      <div class="about-grid">
+        <p class="about-lead">I like problems that come with a way to check the answer.</p>
+        <div class="about-body">
+          <p>
+            My fellowship work is writing tasks that are hard for AI coding agents and fair to grade: a real
+            environment, a reference solution, and tests that pass for any correct answer and fail for every shortcut.
+            The habit stuck. When I build a tool, I find real data to test it on, write down what broke, and put the
+            before and after on the page.
+          </p>
+          <p>
+            Away from benchmarks, I build small things I want to exist: a battery manager for Macs, a scam checker
+            for students, multiplayer games for friends. And cricket, which is how 295,557 IPL deliveries ended up on
+            this page.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap contact" id="contact" aria-labelledby="contact-title">
+      <header class="sec-head">
+        <p class="sec-num">04</p>
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="sec-note">Hiring for a software role, or have something that needs testing? Write to me.</p>
+      </header>
+      <div class="contact-grid">
+        <form class="compose" id="compose" novalidate>
+          <div class="field">
+            <label for="c-name">Your name</label>
+            <input id="c-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="c-topic">What's it about?</label>
+            <select id="c-topic" name="topic">
+              <option>A full-time role</option>
+              <option>A project or contract</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" name="message" rows="5" required placeholder="A line or two is plenty."></textarea>
+          </div>
+          <div class="compose-foot field-wide">
+            <button class="btn" type="submit">Open in my email app</button>
+            <p class="hint" id="compose-hint">This opens your own email app with the message filled in. Nothing is sent from this page.</p>
+          </div>
+        </form>
+        <aside class="direct" aria-label="Other ways to reach me">
+          <p class="direct-label">Or directly</p>
+          <p class="addr"><a data-mail data-mail-text href="#contact">email</a></p>
+          <button class="btn btn-ghost btn-small" id="copy" type="button">Copy address</button>
+          <ul class="direct-links">
+            <li><a href="https://www.linkedin.com/in/arshd-rashid-wani-658a47394" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/arshdwani" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a data-resume href="Arshd-Rashid-Wani-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF) <span aria-hidden="true">↓</span></a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>© 2026 Arshd Rashid Wani</p>
+    <p>Hand-written HTML, CSS and JavaScript on GitHub Pages · <a href="https://github.com/arshdwani/portfolio" target="_blank" rel="noopener">Source ↗</a></p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
