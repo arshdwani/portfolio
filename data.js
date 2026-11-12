@@ -20,13 +20,13 @@ window.SITE = {
 
   featured: [
     {
-      id: "terminal-bench",
+      id: "agent-benchmarks",
       kind: "Benchmark tasks",
       year: "2026",
-      title: "Terminal-Bench tasks",
+      title: "Coding-agent benchmark tasks",
       what: "Hard, realistic Linux-terminal tasks that frontier coding agents are graded on. Each one ships a Docker environment, a reference solution and pytest checks that don't care how the agent got there.",
       role: "Task author, Handshake AI Fellowship",
-      result: "One of my tasks went unsolved in 5 of 5 frontier-model attempts. Every task has to pass a CI difficulty gate: at most 1 solve in 2 attempts.",
+      result: "One of my tasks went unsolved in 5 of 5 frontier-model attempts. Every task has to pass a CI difficulty check against a frontier model.",
       chart: { type: "attempts", n: 5, solved: 0 },
       stack: ["Docker", "Python", "pytest", "Bash", "GitHub Actions"],
       links: [],
@@ -143,10 +143,10 @@ window.SITE = {
       org: "Handshake AI",
       title: "AI Fellow",
       points: [
-        "Project Dynamo (now): design and evaluate hard coding-agent tasks and automated verification workflows.",
-        "Terminal-Bench 3 (Sep–Oct): author tasks that must pass an oracle solve, test validity, rubric review and a frontier-model difficulty gate.",
-        "Terminal-Bench 2.0 (Jul–Sep): built tasks end to end and tuned difficulty with pass@k; read agent logs for reward hacking and closed the loopholes.",
-        "Project Octahedron (Oct): evaluated Hindi/English assistant models against live app state and reviewed other fellows' work.",
+        "Coding-agent task design (now): design and evaluate hard coding-agent tasks and automated verification workflows.",
+        "Terminal benchmark authoring (Sep–Oct): author tasks that must pass a reference solve, test validity, rubric review and a frontier-model difficulty check.",
+        "Agent benchmark engineering (Jul–Sep): built tasks end to end and tuned difficulty with pass@k; read agent logs for reward hacking and closed the loopholes.",
+        "Multilingual evaluation (Oct): evaluated Hindi/English assistant models against live app state and reviewed other fellows' work.",
       ],
     },
     {
