@@ -14,9 +14,9 @@ window.SITE = {
   resume: "Arshd-Rashid-Wani-Resume.pdf",
 
   summary:
-    "Software engineer with experience in backend development, cloud and database systems, LLM evaluation and AI " +
-    "benchmarking. At Handshake AI, I write hard, realistic terminal tasks that frontier coding agents are graded on. " +
-    "Before that, I built cloud and database backend services and REST APIs at Oracle.",
+    "Software engineer focused on LLM evaluation and AI benchmarking, with a grounding in backend development and " +
+    "database systems. At Handshake AI, I write hard, realistic terminal tasks that frontier coding agents are graded " +
+    "on. I also build and ship my own tools, and publish each one with its results.",
 
   featured: [
     {
@@ -155,17 +155,11 @@ window.SITE = {
       title: "AI trainer and evaluator, part-time",
       points: ["Trained and evaluated AI model responses."],
     },
-    {
-      when: "Previously",
-      org: "Oracle",
-      title: "Backend engineering",
-      points: ["Built cloud and database backend services and REST APIs."],
-    },
   ],
 
   education: [
     { when: "2024 – now", title: "Master's, Computer Science", org: "National University College" },
-    { when: "", title: "B.Tech, Computer Science & Engineering", org: "NIT Srinagar" },
+    { when: "2020 – 2024 · CGPA 9.0/10", title: "B.Tech, Computer Science & Engineering", org: "NIT Srinagar" },
   ],
 
   skills: [
@@ -174,7 +168,7 @@ window.SITE = {
     { group: "AI evaluation", items: ["Benchmark design", "pass@k tuning", "LLM evaluation", "Rubric scoring", "RAG", "PyTorch", "pandas"] },
   ],
 
-  languages: ["English", "Hindi", "Urdu"],
+  languages: ["English (native)", "Hindi (native)", "Urdu"],
 
   // What the live check in the hero pings. "cors" hosts let the page read the status code;
   // the others only tell us the server answered.
